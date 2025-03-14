@@ -38,86 +38,133 @@
         <p class="par">
             My tech stack
         </p>
-        <ul>
-            <li>
-                Python
-            </li>
-            <li>
-                C
-            </li>
-            <li>
-                C++
-            </li>
-            <li>
-                Java Script
-            </li>
-            <li>
-                SQL
-            </li>
-            <li>
-                VBA
-            </li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Python</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>VBA</td>
+                    <td>Intermediate</td>
+                </tr>
+            </tbody>
+        </table>
+    
         <p class="par">
             Tools that I use
         </p>
-        <ul>
-            <li>
-                Google App Scripts
-            </li>
-            <li>
-                Postgres
-            </li>
-            <li>
-                React
-            </li>
-            <li>
-                HTML+CSS
-            </li>
-            <li>
-                Django
-            </li>
-            <li>
-                Pytorch
-            </li>
-            <li>
-                Firebase
-            </li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Google App Scripts</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>Postgres</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>React</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>HTML+CSS</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Pytorch</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Firebase</td>
+                    <td>Basic</td>
+                </tr>
+            </tbody>
+        </table>
+    
         <p class="par">
             Additional skills
         </p>
-        <ul>
-            <li>
-                English (C1)
-            </li>
-            <li>
-                Spanish (Native)
-            </li>
-            <li>
-                Markdown (Regular)
-            </li>
-            <li>
-                LaTex (Basic)
-            </li>
-            <li>
-                HDL (Regular)
-            </li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>English</td>
+                    <td>C1</td>
+                </tr>
+                <tr>
+                    <td>Spanish</td>
+                    <td>Native</td>
+                </tr>
+                <tr>
+                    <td>Markdown</td>
+                    <td>Regular</td>
+                </tr>
+                <tr>
+                    <td>HDL</td>
+                    <td>Regular</td>
+                </tr>
+                <tr>
+                    <td>LaTeX</td>
+                    <td>Basic</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    
 
     <h3>
         Check out my Github:
-        <a href="https://github.com/Diegoeyza">  Github Profile</a>
+        <a href="https://github.com/Diegoeyza" target="_blank">
+            <img src="https://github.com/Diegoeyza.png" alt="GitHub Profile Picture" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
+            Github Profile
+        </a>
     </h3>
 
     
 
     <form>
-        <input type="text" id="nameInput" placeholder="Type your name here" oninput="output.value = 'Hello, ' + this.value + '!'">
-        <output id="output"></output>
+        <input type="text" id="nameInput" placeholder="Type your name here">
+        <button type="button" onclick="createFallingText()">Start!!</button>
     </form>
 
-    </textarea>
 </body>
 </html>

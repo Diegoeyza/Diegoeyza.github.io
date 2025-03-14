@@ -1,41 +1,33 @@
 #wholeBody {
     background-color: black;
-    color: #00ffff; /* Neon cyan text */
-    font-family: 'Orbitron', sans-serif; /* A futuristic font */
+    color: #00ffff; 
+    font-family: 'Orbitron', sans-serif; 
     padding: 20px;
     position: relative;
+    overflow-x: hidden; 
 }
 
-/* Ensures text and other content stays on top */
-#content {
-    position: relative;
-    z-index: 1; /* Keeps text above lasers */
-}
-
-/* Lasers */
 .laser {
     position: absolute;
-    width: 100%;
+    width: 60%;
     height: 2px;
     background: cyan;
     box-shadow: 0 0 10px cyan, 0 0 20px cyan;
     opacity: 0.8;
     animation: moveLaser 3s linear infinite;
-    z-index: -1; /* Keeps lasers behind everything */
+    z-index: -1;
 }
 
 @keyframes moveLaser {
-    from { top: -5%; }
+    from { top: 0%; }
     to { top: 100%; }
 }
 
-/* Multiple lasers at different positions */
 .laser:nth-child(1) { left: 10%; animation-delay: 0s; background: rgb(255, 57, 57); }
-.laser:nth-child(2) { left: 30%; animation-delay: 1s; background: rgb(255, 107, 255)}
-.laser:nth-child(3) { left: 50%; animation-delay: 2s; background: rgb(59, 236, 35);}
-.laser:nth-child(4) { left: 70%; animation-delay: 0.5s; background: white;}
+.laser:nth-child(2) { left: 30%; animation-delay: 1s; background: rgb(255, 107, 255); }
+.laser:nth-child(3) { left: 50%; animation-delay: 2s; background: rgb(59, 236, 35); }
+.laser:nth-child(4) { left: 70%; animation-delay: 0.5s; background: white; }
 .laser:nth-child(5) { left: 90%; animation-delay: 1.5s; }
-
 
 #mainHeader {
     text-align: center;
@@ -52,23 +44,14 @@
     margin-bottom: 30px;
 }
 
-.info {
+.info, .info1 {
     background: rgba(0, 255, 255, 0.1);
     border: 1px solid cyan;
     box-shadow: 0 0 15px cyan;
     padding: 15px;
     margin: 20px auto;
-    width: 60%;
-    border-radius: 10px;
-}
-
-.info1 {
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid cyan;
-    box-shadow: 0 0 15px cyan;
-    padding: 15px;
-    margin: 20px auto;
-    width: 70%;
+    width: 80%; 
+    max-width: 800px; 
     border-radius: 10px;
 }
 
@@ -108,10 +91,10 @@ h3 {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #ffffff;
-    text-shadow: 0 0 8px cyan, 0 0 20px cyan; /* Glowing effect */
+    text-shadow: 0 0 8px cyan, 0 0 20px cyan; 
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 8px;
     border: 1px solid cyan;
     box-shadow: 0 0 15px cyan;
@@ -120,4 +103,126 @@ h3 {
     margin-right: auto;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
 
+@media (max-width: 768px) {
+    .laser {
+        width: 90%; 
+    }
+
+    .info, .info1 {
+        width: 90%; 
+    }
+
+    #mainHeader {
+        font-size: 2.5rem; 
+    }
+
+    #invitation {
+        font-size: 1.2rem; 
+    }
+
+    .par {
+        font-size: 1rem; 
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid cyan;
+    color: #ffffff;
+}
+
+th {
+    background-color: rgba(0, 255, 255, 0.2);
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px cyan;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 5px cyan, 0 0 10px cyan;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #00ffff;
+    color: black;
+    text-shadow: 0 0 20px white, 0 0 30px white;
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 5px cyan;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+#textContainer {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    color: #00ffff;
+    font-size: 2rem;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+#nameInput {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #00ffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 10px cyan;
+    text-align: center;
+}
+
+.fallingText {
+    position: absolute;
+    top: -50px;
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    animation: fall 4s linear forwards;
+    z-index: 1;
+}
+
+@keyframes fall {
+    to {
+        top: 100%;
+    }
+}
