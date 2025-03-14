@@ -25,9 +25,9 @@
 
 .laser:nth-child(1) { left: 10%; animation-delay: 0s; background: rgb(255, 57, 57); }
 .laser:nth-child(2) { left: 30%; animation-delay: 1s; background: rgb(255, 107, 255); }
-.laser:nth-child(3) { left: 50%; animation-delay: 2s; background: rgb(59, 236, 35); }
-.laser:nth-child(4) { left: 70%; animation-delay: 0.5s; background: white; }
-.laser:nth-child(5) { left: 90%; animation-delay: 1.5s; }
+.laser:nth-child(3) { left: 40%; animation-delay: 2s; background: rgb(59, 236, 35); }
+.laser:nth-child(4) { right: 10%; animation-delay: 0.5s; background: white; }
+.laser:nth-child(5) { right: 40%; animation-delay: 1.5s; }
 
 #mainHeader {
     text-align: center;
@@ -213,16 +213,25 @@ tr:hover {
 
 .fallingText {
     position: absolute;
-    top: -50px;
+    bottom: -50px;
     font-size: 2rem;
     color: #00ffff;
     text-shadow: 0 0 10px cyan, 0 0 20px cyan;
     animation: fall 4s linear forwards;
     z-index: 1;
+    opacity: 0;
 }
 
+
+
 @keyframes fall {
-    to {
-        top: 100%;
+    0% {
+        bottom: 0%;
+        opacity: 1; 
+    }
+    100% {
+        bottom: 105%;
+        opacity: 0.2; 
     }
 }
+

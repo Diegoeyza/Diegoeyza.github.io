@@ -105,7 +105,8 @@ function createFallingText() {
                 fallingText.style.left = `${j*10 + Math.random() * 10}%`;
                 wholeBody.appendChild(fallingText);
                 currentColor++;
+                if (currentColor>=colorList.length) currentColor=0
             }
-    }
+        }
     }
 }
