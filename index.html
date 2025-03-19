@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body id="wholeBody">
     <div class="laser"></div>
@@ -12,159 +13,170 @@
     <div class="laser"></div>
     <div class="laser"></div>
     <div class="laser"></div>
-    <h1 id="mainHeader">
-        Hey there, I´m Diego
-    </h1>
-    <h2 id="invitation">
-        I invite you to look arround and find out more about me
-    </h2>
-    <div class="info1">
-        <p class="par">
-            About Me
-        </p>
-        <ul>
-            <li>
-                Computer Engineering student at Universidad de los Andes (2022-Now)
-            </li>
-            <li>
-                Currently researching ML implementations in the biomedical field
-            </li>
-            <li>
-                On my spare time I do Taekwondo (Black belt 1st Dan), play the piano and play videogames
-            </li>
-        </ul>
+    
+    <div class="container">
+        <h1 id="mainHeader">
+            Hey there, I´m Diego
+        </h1>
+        <h2 id="invitation">
+            I invite you to look arround and find out more about me
+        </h2>
+        <div class="info1">
+            <p class="par">
+                About Me
+            </p>
+            <ul>
+                <li>
+                    Computer Engineering student at Universidad de los Andes (2022-Now)
+                </li>
+                <li>
+                    Currently researching ML implementations in the biomedical field
+                </li>
+                <li>
+                    On my spare time I do Taekwondo (Black belt 1st Dan), play the piano and play videogames
+                </li>
+            </ul>
+        </div>
+        <div class="row mb-3 text-center">
+            <div class="info col-lg-4 themed-grid-col">
+                <p class="par">
+                    My tech stack
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Python</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>VBA</td>
+                            <td>Intermediate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="info col-lg-4 themed-grid-col">
+                <p class="par">
+                    Tools that I use
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google App Scripts</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>Postgres</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>React</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>HTML+CSS</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>Django</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td>Pytorch</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td>Firebase</td>
+                            <td>Basic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="info col-lg-4 themed-grid-col">
+                <p class="par">
+                    Additional skills
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>English</td>
+                            <td>C1</td>
+                        </tr>
+                        <tr>
+                            <td>Spanish</td>
+                            <td>Native</td>
+                        </tr>
+                        <tr>
+                            <td>Markdown</td>
+                            <td>Regular</td>
+                        </tr>
+                        <tr>
+                            <td>HDL</td>
+                            <td>Regular</td>
+                        </tr>
+                        <tr>
+                            <td>LaTeX</td>
+                            <td>Basic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+
+        <h3>
+            Check out my Github:
+            <a href="https://github.com/Diegoeyza" target="_blank">
+                <img src="https://github.com/Diegoeyza.png" alt="GitHub Profile Picture" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
+                Github Profile
+            </a>
+        </h3>
+
+        
+
+        <form>
+            <div class="container text-center">
+                <input type="text" id="nameInput" class="form-control mb-3" id="custom-placeholder"placeholder="Type your name here">
+                <button type="button" class="btn btn-primary" id="button" onclick="createFallingText()">Start!!</button>
+            </div>
+        </form>
     </div>
-    <div class="info">
-        <p class="par">
-            My tech stack
-        </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Skill</th>
-                    <th>Level</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Python</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <td>C++</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <td>C</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>JavaScript</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>SQL</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>VBA</td>
-                    <td>Intermediate</td>
-                </tr>
-            </tbody>
-        </table>
-    
-        <p class="par">
-            Tools that I use
-        </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tool</th>
-                    <th>Level</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Google App Scripts</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <td>Postgres</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>React</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>HTML+CSS</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <td>Django</td>
-                    <td>Basic</td>
-                </tr>
-                <tr>
-                    <td>Pytorch</td>
-                    <td>Basic</td>
-                </tr>
-                <tr>
-                    <td>Firebase</td>
-                    <td>Basic</td>
-                </tr>
-            </tbody>
-        </table>
-    
-        <p class="par">
-            Additional skills
-        </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Skill</th>
-                    <th>Level</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>English</td>
-                    <td>C1</td>
-                </tr>
-                <tr>
-                    <td>Spanish</td>
-                    <td>Native</td>
-                </tr>
-                <tr>
-                    <td>Markdown</td>
-                    <td>Regular</td>
-                </tr>
-                <tr>
-                    <td>HDL</td>
-                    <td>Regular</td>
-                </tr>
-                <tr>
-                    <td>LaTeX</td>
-                    <td>Basic</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-
-    <h3>
-        Check out my Github:
-        <a href="https://github.com/Diegoeyza" target="_blank">
-            <img src="https://github.com/Diegoeyza.png" alt="GitHub Profile Picture" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;">
-            Github Profile
-        </a>
-    </h3>
-
-    
-
-    <form>
-        <input type="text" id="nameInput" placeholder="Type your name here">
-        <button type="button" onclick="createFallingText()">Start!!</button>
-    </form>
 
 </body>
 </html>
