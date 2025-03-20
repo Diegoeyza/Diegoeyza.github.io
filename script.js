@@ -110,3 +110,42 @@ function createFallingText() {
         }
     }
 }
+
+const API_KEY = '5e4b6cdcdfb24438b1d949bc743ac9d8'; 
+const CATEGORY = 'technology';  
+const API_URL = `https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`;
+
+async function fetchNews() {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    if (data.status === "ok") {
+        displayNews(data.articles.slice(0, 10));
+    } else {
+        console.error("Error fetching news:", data);
+    }
+}
+
+function displayNews(articles) {
+    const newsContainer = document.getElementById("newsAccordion");
+    newsContainer.innerHTML = articles.map((article, index) => `
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading${index}">
+                <button class="accordion-button ${index === 0 ? '' : 'collapsed'}" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#collapse${index}" 
+                    aria-expanded="${index === 0}" aria-controls="collapse${index}">
+                    ${article.title}
+                </button>
+            </h2>
+            <div id="collapse${index}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" 
+                aria-labelledby="heading${index}" data-bs-parent="#newsAccordion">
+                <div class="accordion-body">
+                    <strong>${article.source.name}</strong> - ${article.publishedAt}
+                    <p>${article.description || "No description available."}</p>
+                    <a href="${article.url}" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+fetchNews();
