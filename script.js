@@ -111,11 +111,14 @@ function createFallingText() {
     }
 }
 
+/*---------------------------------------------------------------------------------------------------------------------------- this is what I modified, change the app url if broken*/
+
 const API_KEY = '5e4b6cdcdfb24438b1d949bc743ac9d8'; 
 const CATEGORY = 'technology';  
 const API_URL = `https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`;
 
 async function fetchNews() {
+    const API_URL = `https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`;
     const response = await fetch(API_URL);
     const data = await response.json();
     if (data.status === "ok") {
