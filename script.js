@@ -118,7 +118,7 @@ const CATEGORY = 'technology';
 const API_URL = `https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`;
 
 async function fetchNews() {
-    const API_URL = `https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`;
+    const API_URL = `https://diegoeyza-github-io.onrender.com/news`;
     const response = await fetch(API_URL);
     const data = await response.json();
     if (data.status === "ok") {
