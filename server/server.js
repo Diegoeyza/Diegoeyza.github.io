@@ -6,10 +6,11 @@ const app = express();
 app.use(cors());
 
 const API_KEY = '5e4b6cdcdfb24438b1d949bc743ac9d8';
+const CATEGORY = 'technology';  
 
 app.get('/news', async (req, res) => {
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&pageSize=10&apiKey=${API_KEY}`);
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?category=${CATEGORY}&pageSize=10&apiKey=${API_KEY}`);
         const data = await response.json();
         res.json(data);
     } catch (error) {
