@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
   title?: string;
@@ -24,6 +25,7 @@ const { title = 'Diego Eyzaguirre · AI Research Engineer', description = 'AI Re
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="min-h-screen antialiased">
+    <ThemeToggle />
     <slot />
   </body>
 </html>

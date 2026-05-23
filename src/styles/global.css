@@ -14,6 +14,17 @@
   --color-border: #1e293b;
 }
 
+[data-theme="light"] {
+  --color-deep: #f8fafc;
+  --color-surface: #ffffff;
+  --color-card: #f1f5f9;
+  --color-accent: #0284c7;
+  --color-violet: #7c3aed;
+  --color-foreground: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,11 +33,17 @@ body {
   background-color: var(--color-deep);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background-color: rgba(0, 240, 255, 0.2);
   color: #fff;
+}
+
+[data-theme="light"] ::selection {
+  background-color: rgba(2, 132, 199, 0.2);
+  color: #0f172a;
 }
 
 .animate-fade-in {
