@@ -1,0 +1,53 @@
+---
+interface SkillGroup {
+  title: string;
+  icon: string;
+  skills: string[];
+}
+
+const groups: SkillGroup[] = [
+  {
+    title: 'AI & Machine Learning',
+    icon: 'brain',
+    skills: ['Agentic AI', 'RAG Systems', 'PyTorch', 'TinyML', 'Model Quantization', 'ONNX', 'Gemma 4', 'Pandas'],
+  },
+  {
+    title: 'Full-Stack Engineering',
+    icon: 'code',
+    skills: ['Next.js', 'React', 'TypeScript', 'Python', 'Flask', 'Django', 'Supabase', 'PostgreSQL'],
+  },
+  {
+    title: 'Infrastructure & DevOps',
+    icon: 'server',
+    skills: ['Docker', 'Docker Compose', 'GitHub Actions', 'Podman', 'Render', 'Vercel', 'Hugging Face'],
+  },
+  {
+    title: 'Embedded & Hardware',
+    icon: 'chip',
+    skills: ['ESP32 Family', 'C++', 'C', 'ESP-IDF', 'TCP/IP', 'UART', 'Signal Processing', 'Fedora Linux'],
+  },
+];
+---
+
+<section id="skills" class="py-24 px-6 max-w-5xl mx-auto">
+  <div class="animate-fade-in">
+    <p class="font-mono text-accent text-sm tracking-widest uppercase mb-2">04 · Stack</p>
+    <h2 class="font-mono text-3xl md:text-4xl font-bold text-foreground mb-8">Technical Ecosystem</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-6">
+    {groups.map((group, i) => {
+      const delay = Math.min(i, 2);
+      return (
+      <div class={`animate-fade-in animate-fade-in-delay-${delay} bg-surface border border-border rounded-xl p-6`}>
+        <h3 class="font-mono text-sm font-semibold text-accent tracking-wider uppercase mb-4">{group.title}</h3>
+        <div class="flex flex-wrap gap-2">
+          {group.skills.map(skill => (
+            <span class="px-3 py-1.5 text-xs font-mono bg-card border border-border rounded text-muted hover:text-foreground hover:border-accent/30 transition-colors duration-200">{skill}</span>
+          ))}
+        </div>
+      </div>
+      );
+    })}
+  </div>
+</section>

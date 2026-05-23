@@ -1,0 +1,75 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  github: string;
+  featured?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    title: 'RA Analyzer',
+    description: 'AI-powered curriculum analysis system that transforms academic syllabi into structured, interactive knowledge graphs. Features a Gemma 4 31B RAG agent, vector embeddings with pgvector, and an interactive graph visualization interface built with Next.js and React Flow.',
+    tags: ['Next.js', 'Python', 'Flask', 'Gemma 4', 'Supabase', 'pgvector', 'Docker', 'RAG'],
+    github: 'https://github.com/Diegoeyza/RA_IAA',
+    featured: true,
+  },
+  {
+    title: 'OutfitLab',
+    description: 'AI-powered outfit recommendation app that suggests clothing combinations based on weather data, user preferences, and FashionCLIP-based image classification. Features a virtual closet, outfit mixology lab, and dark/light mode UI.',
+    tags: ['Python', 'Django', 'React', 'Node.js', 'FashionCLIP', 'Docker', 'AI/ML'],
+    github: 'https://github.com/Diegoeyza/OutfitLab',
+  },
+  {
+    title: 'AI Class Assistant',
+    description: 'Intelligent teaching assistant platform that enhances classroom presentations with AI-powered features including real-time question generation, interactive examples, and a Telegram bot for student engagement. Built with Next.js, FastAPI, and Google Gemini.',
+    tags: ['Python', 'FastAPI', 'Next.js', 'Telegram Bot', 'Gemini', 'Docker'],
+    github: 'https://github.com/Diegoeyza/AI-Class_Assistant',
+  },
+  {
+    title: 'Flowsim',
+    description: 'An interactive industrial simulator for designing and simulating production lines over time. Features a drag-and-drop editor built with React Flow for creating process flows and visualizing throughput metrics.',
+    tags: ['JavaScript', 'React Flow', 'Simulation', 'Node.js'],
+    github: 'https://github.com/Diegoeyza/Flowsim',
+  },
+  {
+    title: 'CPR Coupled Oscillators',
+    description: 'Research project analyzing CPR quality using fNIRS signals. Implements coupled oscillator models to study physiological dynamics during cardiac arrest resuscitation.',
+    tags: ['Python', 'fNIRS', 'Signal Processing', 'Research'],
+    github: 'https://github.com/Diegoeyza/CPR-Coupled-Oscillators',
+  },
+];
+---
+
+<section id="projects" class="py-24 px-6 max-w-5xl mx-auto">
+  <div class="animate-fade-in">
+    <p class="font-mono text-accent text-sm tracking-widest uppercase mb-2">02 · Projects</p>
+    <h2 class="font-mono text-3xl md:text-4xl font-bold text-foreground mb-8">Featured Work</h2>
+  </div>
+
+  <div class="grid gap-6">
+    {
+      projects.map((project, i) => {
+        const delay = Math.min(i, 3);
+        return (
+        <a href={project.github} target="_blank" rel="noopener noreferrer" class={`group block animate-fade-in animate-fade-in-delay-${delay}`}>
+          <div class="bg-surface border border-border rounded-xl p-6 hover:border-accent/30 transition-all duration-300">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="font-mono text-lg font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
+                {project.featured ? '★ ' : ''}{project.title}
+              </h3>
+              <svg class="w-4 h-4 text-muted group-hover:text-accent transition-colors duration-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-2.5 py-1 text-xs font-mono bg-card border border-border rounded text-muted">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      );
+      })}
+  </div>
+</section>

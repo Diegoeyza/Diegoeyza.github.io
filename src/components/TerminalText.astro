@@ -1,0 +1,50 @@
+---
+export interface Props {
+  strings: string[];
+  prefix?: string;
+  className?: string;
+}
+
+const { strings, prefix = '$ ', className = '' } = Astro.props;
+---
+
+<div class={`font-mono text-sm text-muted ${className}`} id="terminal-container">
+  <span class="text-accent">{prefix}</span>
+  <span id="terminal-text" class="text-foreground"></span>
+  <span class="inline-block w-2 h-4 bg-accent ml-0.5 animate-pulse"></span>
+</div>
+
+<script define:vars={{ strings }}> 
+  (function() {
+    const el = document.getElementById('terminal-text');
+    if (!el) return;
+    let stringIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const current = strings[stringIndex];
+      if (!isDeleting) {
+        if (charIndex < current.length) {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+          setTimeout(type, 60 + Math.random() * 40);
+        } else {
+          setTimeout(() => { isDeleting = true; type(); }, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(type, 30 + Math.random() * 20);
+        } else {
+          isDeleting = false;
+          stringIndex = (stringIndex + 1) % strings.length;
+          setTimeout(type, 300);
+        }
+      }
+    }
+
+    setTimeout(type, 500);
+  })();
+</script>
