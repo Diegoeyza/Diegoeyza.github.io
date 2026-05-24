@@ -2,7 +2,7 @@
 import TerminalText from './TerminalText.astro';
 ---
 
-<section class="min-h-[100dvh] flex flex-col justify-center items-center px-6 relative overflow-x-hidden">
+<section class="min-h-[100dvh] flex flex-col justify-center items-center px-6 relative">
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet/5 rounded-full blur-3xl"></div>
@@ -27,10 +27,10 @@ import TerminalText from './TerminalText.astro';
     <TerminalText
       strings={["Building agents that run on cheap hardware", "Exploring TinyML for biomedical signals", "Full-stack AI systems with RAG at the core"]}
       prefix="$  "
-      className="mx-auto max-w-xl text-left bg-surface/80 border border-border rounded-lg p-4 backdrop-blur-sm"
+      className="mx-auto max-w-xl text-left bg-surface/80 border border-border rounded-lg p-4 backdrop-blur-sm break-words"
     />
 
-    <div class="flex gap-4 justify-center mt-10">
+    <div class="flex flex-wrap gap-3 sm:gap-4 justify-center mt-10">
       <a href="mailto:deyzaguirre1@miuandes.cl" class="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 border border-accent/30 text-accent font-mono text-sm rounded-lg hover:bg-accent/20 transition-all duration-300">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
         Email
